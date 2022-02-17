@@ -1,0 +1,25 @@
+
+# Mpv Youtube Search
+
+This lua script for [mpv media player](https://mpv.io/) will use zenity and youtube-dl for search youtube video.
+
+Based on [mpv-zenity-open-files](https://github.com/alifarazz/mpv-zenity-open-files) by alifarazz.
+
+## Keybindings
+- `CTRL+SHIFT+s`: search youtube videos.
+### Coutom Keybindings
+Change bottom of **youtube-search.lua** file.
+
+### Coustom Result Number
+Change value of **`rNumber`** variable in **youtube-search.lua** file.
+
+### How to install
+```bash
+cd ~/.config/mpv/scripts
+wget https://github.com/rozari0/mpv-youtube-search/raw/master/youtube-search.lua
+```
+
+### Warning & Suggestion
+May not work on windows.
+Using with [mpv-gallery-view](https://github.com/occivink/mpv-gallery-view/) recommended.
+
