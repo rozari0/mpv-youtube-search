@@ -4,37 +4,37 @@
 -- Default keybindings:
 --      CTRL+SHIFT+s: search video in youtube.
 --
-
+table.unpack = table.unpack or unpack
 utils = require 'mp.utils'
-rNumber = 5
+limit = 5
 
 function get_focus_using_xdotool()
     return utils.subprocess({
-        args = {'xdotool', 'getwindowfocus'}
+        args = { 'xdotool', 'getwindowfocus' }
     })
 end
 
 function invoke_zenity(args)
     -- local focus = get_focus_using_xdotool()
     return utils.subprocess({
-        args = {'zenity', table.unpack(args)},
+        args = { 'zenity', table.unpack(args) },
         cancellable = false,
     })
 end
 
-
 function search_youtube()
     local url_select = invoke_zenity({
-            '--entry',
-            '--title=Search Youtube',
-            '--window-icon=mpv',
-            '--text=Enter Search Text:'
+        '--entry',
+        '--title=Search Youtube',
+        '--window-icon=mpv',
+        '--text=Enter Search Text:'
     })
     if (url_select.status ~= 0) then
-        return end
-    
+        return
+    end
+
     for filename in string.gmatch(url_select.stdout, '[^\n]+') do
-        mp.commandv('loadfile', "ytdl://ytsearch" .. rNumber .. ":" .. filename, 'replace')
+        mp.commandv('loadfile', "ytdl://ytsearch" .. limit .. ":" .. filename, 'replace')
     end
 end
 
