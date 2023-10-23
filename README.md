@@ -1,11 +1,10 @@
 <h1 align="center">mpv Youtube Search</h1>
 
-<p>
+
 This lua script for [mpv media player](https://mpv.io/) will use zenity and youtube-dl/yt-dlp for search youtube video.
-</p><p>
 Based on [mpv-zenity-open-files](https://github.com/alifarazz/mpv-zenity-open-files) by alifarazz.
 
-</p>
+
 
 ### Installation
 
@@ -29,7 +28,7 @@ wget -O ~/.config/mpv/scripts/youtube-search.lua https://github.com/rozari0/mpv-
 
 
 
-## Warning & Suggestion
+### Warning & Suggestion
 
 May not work on windows.
 Using with [mpv-gallery-view](https://github.com/occivink/mpv-gallery-view/) recommended.
