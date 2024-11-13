@@ -8,14 +8,7 @@ table.unpack = table.unpack or unpack
 utils = require 'mp.utils'
 limit = 5
 
-function get_focus_using_xdotool()
-    return utils.subprocess({
-        args = { 'xdotool', 'getwindowfocus' }
-    })
-end
-
-function invoke_zenity(args)
-    -- local focus = get_focus_using_xdotool()
+function invoke_zenity(args) 
     return utils.subprocess({
         args = { 'zenity', table.unpack(args) },
         cancellable = false,
