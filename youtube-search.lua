@@ -19,7 +19,7 @@ function search_youtube()
     local url_select = invoke_zenity({
         '--entry',
         '--title=Search Youtube',
-        '--window-icon=mpv',
+        '--icon=mpv',
         '--text=Enter Search Text:'
     })
     if (url_select.status ~= 0) then
@@ -27,7 +27,7 @@ function search_youtube()
     end
 
     for filename in string.gmatch(url_select.stdout, '[^\n]+') do
-        mp.commandv('loadfile', "ytdl://ytsearch" .. limit .. ":" .. filename, 'replace')
+        mp.commandv('loadfile', "ytdl://ytsearch" .. limit .. ":" .. filename, 'append')
     end
 end
 

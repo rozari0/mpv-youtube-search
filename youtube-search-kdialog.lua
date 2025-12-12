@@ -29,7 +29,7 @@ function search_youtube()
     end
 
     for filename in string.gmatch(url_select.stdout, '[^\n]+') do
-        mp.commandv('loadfile', "ytdl://ytsearch" .. limit .. ":" .. filename, 'replace')
+        mp.commandv('loadfile', "ytdl://ytsearch" .. limit .. ":" .. filename, 'append')
     end
 end
 
